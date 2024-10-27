@@ -2,8 +2,8 @@ import datetime
 import pandas as pd
 import streamlit as st
 
-Price = "https://raw.githubusercontent.com/HarriAiraksinen/ElectricityPortal/refs/heads/main/sahkon-hinta-010121-240924.csv?token=GHSAT0AAAAAACZRPDNRKZTXGIJBL2EKWTI4ZY6NTJA"
-Usage = "https://raw.githubusercontent.com/HarriAiraksinen/ElectricityPortal/refs/heads/main/Electricity_20-09-2024.csv?token=GHSAT0AAAAAACZRPDNQMNWM2SQ5LFOI6GXSZY6NTVQ"
+Price = "https://raw.githubusercontent.com/HarriAiraksinen/ElectricityPortal/refs/heads/main/sahkon-hinta-010121-240924.csv"
+Usage = "https://raw.githubusercontent.com/HarriAiraksinen/ElectricityPortal/refs/heads/main/Electricity_20-09-2024.csv"
 # Electricity_Price = pd.read_csv('sahkon-hinta-010121-240924.csv')
 Electricity_Price = pd.read_csv(Price)
 # Electricity_Usage = pd.read_csv('Electricity_20-09-2024.csv',delimiter=';')
