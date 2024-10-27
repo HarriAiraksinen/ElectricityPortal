@@ -2,9 +2,12 @@ import datetime
 import pandas as pd
 import streamlit as st
 
-
-Electricity_Price = pd.read_csv('sahkon-hinta-010121-240924.csv')
-Electricity_Usage = pd.read_csv('Electricity_20-09-2024.csv',delimiter=';')
+Price = "https://raw.githubusercontent.com/HarriAiraksinen/ElectricityPortal/refs/heads/main/sahkon-hinta-010121-240924.csv?token=GHSAT0AAAAAACZRPDNRKZTXGIJBL2EKWTI4ZY6NTJA"
+Usage = "https://raw.githubusercontent.com/HarriAiraksinen/ElectricityPortal/refs/heads/main/Electricity_20-09-2024.csv?token=GHSAT0AAAAAACZRPDNQMNWM2SQ5LFOI6GXSZY6NTVQ"
+# Electricity_Price = pd.read_csv('sahkon-hinta-010121-240924.csv')
+Electricity_Price = pd.read_csv(Price)
+# Electricity_Usage = pd.read_csv('Electricity_20-09-2024.csv',delimiter=';')
+Electricity_Usage = pd.read_csv(Usage,delimiter=';')
 
 # Change time format of both files to Pandas datetime
 Electricity_Price['Time'] = pd.to_datetime(Electricity_Price['Time'],format = '%d-%m-%Y %H:%M:%S')
