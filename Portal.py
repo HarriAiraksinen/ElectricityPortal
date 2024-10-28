@@ -65,4 +65,4 @@ st.line_chart(price, x = 'Time', y = 'Price (cent/kWh)',y_label= 'Electricity pr
 st.line_chart(bill, x = 'Time', y = 'PriceTotalPerHour',y_label= 'Electricity bill [€]', x_label='Time')
 st.line_chart(temp, x = 'Time', y = 'Temperature',y_label= 'Temperature', x_label='Time')
 
-st.table(temp)
+# st.table(temp)
