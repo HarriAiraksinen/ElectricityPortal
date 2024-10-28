@@ -58,7 +58,7 @@ freq_value = options[selected_option]
 consumption = (PriceAndUsage.groupby(pd.Grouper(key = 'Time', freq = freq_value))[['Energy (kWh)']].sum()).reset_index()
 price = (PriceAndUsage.groupby(pd.Grouper(key = 'Time', freq = freq_value))[['Price (cent/kWh)']].sum()).reset_index()
 bill = (PriceAndUsage.groupby(pd.Grouper(key = 'Time', freq = freq_value))[['PriceTotalPerHour']].sum()/100).reset_index()
-temp = (PriceAndUsage.groupby(pd.Grouper(key = 'Time', freq = freq_value))[['Temperature']].sum()).reset_index()
+temp = (PriceAndUsage.groupby(pd.Grouper(key = 'Time', freq = freq_value))[['Temperature']].mean()).reset_index()
 
 st.line_chart(consumption, x = 'Time', y = 'Energy (kWh)',y_label= 'Electricity consumption [KWh]', x_label='Time')
 st.line_chart(price, x = 'Time', y = 'Price (cent/kWh)',y_label= 'Electricity price [cents]', x_label='Time')
