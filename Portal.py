@@ -30,11 +30,14 @@ st.write("Showing range:", d1, " - ", d2)
 
 FixedPrice = st.number_input('Compare against fixed electricity price. Enter value in cents.')
 
-d1 = pd.to_datetime(d1) - pd.Timedelta(minutes=1)
-d2 = pd.to_datetime(d2) - pd.Timedelta(minutes=1)
+d1 = pd.to_datetime(d1)
+d2 = pd.to_datetime(d2)
 
-PriceAndUsage=PriceAndUsage[PriceAndUsage['Time']>d1]
-PriceAndUsage=PriceAndUsage[PriceAndUsage['Time']<d2]
+d11 = d1 - pd.Timedelta(minutes=1)
+d22 = d2 - pd.Timedelta(minutes=1)
+
+PriceAndUsage=PriceAndUsage[PriceAndUsage['Time']>d11]
+PriceAndUsage=PriceAndUsage[PriceAndUsage['Time']<d22]
 
 st.write("Total consumption over the period:", PriceAndUsage['Energy (kWh)'].sum().round(), " KWh")
 st.write("Total bill over the period:", round(PriceAndUsage['PriceTotalPerHour'].sum()/100,0), "€ - With fixed price:", round((PriceAndUsage['Energy (kWh)'].sum() * FixedPrice) / 100, 0), " €")
