@@ -33,6 +33,9 @@ FixedPrice = st.number_input('Compare against fixed electricity price. Enter val
 d1 = pd.to_datetime(d1)
 d2 = pd.to_datetime(d2)
 
+d1 - pd.Timedelta(minutes=1)
+d2 - pd.Timedelta(minutes=1)
+
 PriceAndUsage=PriceAndUsage[PriceAndUsage['Time']>d1]
 PriceAndUsage=PriceAndUsage[PriceAndUsage['Time']<d2]
 
